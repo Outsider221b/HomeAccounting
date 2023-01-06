@@ -1,0 +1,19 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount @Text </p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<input name="inpt"/>
+@code {
+    private int currentCount = 0;
+
+    private string Text = "раз ты пошел нахуй пидор";
+
+    private void IncrementCount()
+    {
+        currentCount++;
+        
+    }
+}
