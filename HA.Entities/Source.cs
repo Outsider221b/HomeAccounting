@@ -50,6 +50,11 @@ namespace HA.Entities
         /// <summary>
         /// (RU) Навигационное свойство для связанной сущности "Валюта". Отношение Many(Source) To One(Currency).
         /// </summary>
-        public Currency Currency { get; set; } = null!;
+        [ForeignKey(nameof(CurrencyId))]
+        public Currency? Currency { get; set; }
+
+        public int? CurrencyId { get; set; }
+
+        public List<Transaction>? Transactions { get; set; }
 	}
 }

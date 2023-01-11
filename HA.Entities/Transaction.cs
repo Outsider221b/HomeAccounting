@@ -48,21 +48,24 @@ namespace HA.Entities
 		/// </summary>
 		public DateTime LastUpdate { get; set; }
 
-        // Navigation
+		// Navigation
 
-        /// <summary>
-        /// (RU) Навигационное свойство для связанной сущности "Счёт". Отношение Many(Transaction) To One(Source).
-        /// </summary>
-        public Source Source { get; set; } = null!;
+		/// <summary>
+		/// (RU) Навигационное свойство для связанной сущности "Счёт". Отношение Many(Transaction) To One(Source).
+		/// </summary>
+		[ForeignKey(nameof(SourceId))]
+        public Source? Source { get; set; }
+
+		public int? SourceId { get; set; }
 
 		/// <summary>
 		/// (RU) Навигационное свойство для связанной сущности "Обязательство". Отношение Many(Transaction) To Many(Obligation).
 		/// </summary>
-		public List<Obligation> Obligations { get; set; } = null!;
+		public List<Obligation>? Obligations { get; set; }
 
 		/// <summary>
 		/// (RU) Навигационное свойство для связанной сущности "Обязательство". Отношение Many(Transaction) To Many(Tag).
 		/// </summary>
-		public List<Tag> Tags { get; set; } = null!;
+		public List<Tag>? Tags { get; set; }
 	}
 }

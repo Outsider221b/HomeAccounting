@@ -45,21 +45,24 @@ namespace HA.Entities
 		/// </summary>
 		public bool IsActual { get; set; }
 
-        //Navigation
+		//Navigation
 
-        /// <summary>
-        /// (RU) Навигационное свойство для связанной сущности "Субъект обязательства". Отношение Many(Obligation) To One(ObligationSubject).
-        /// </summary>
-        public ObligationSubject ObligationSubject { get; set; } = null!;
+		/// <summary>
+		/// (RU) Навигационное свойство для связанной сущности "Субъект обязательства". Отношение Many(Obligation) To One(ObligationSubject).
+		/// </summary>
+		[ForeignKey(nameof(ObligationSubjectId))]
+        public ObligationSubject? ObligationSubject { get; set; }
+
+		public int? ObligationSubjectId { get; set; }
 
         /// <summary>
         /// (RU) Навигационное свойство для связанной сущности "Тег". Отношение Many(Obligation) To Many(Tag).
         /// </summary>
-        public List<Tag> Tags { get; set; } = null!;
+        public List<Tag>? Tags { get; set; }
 
         /// <summary>
         /// (RU) Навигационное свойство для связанной сущности "Транзакция". Отношение Many(Obligation) To Many(Transaction).
         /// </summary>
-        public List<Transaction> Transactions { get; set; } = null!;
+        public List<Transaction>? Transactions { get; set; }
 	}
 }

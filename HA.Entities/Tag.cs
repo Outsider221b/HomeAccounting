@@ -34,11 +34,11 @@ namespace HA.Entities
         /// <summary>
         /// (RU) Навигационное свойство для связанной сущности "Транзакция". Отношение Many(Tag) To Many(Transaction).
         /// </summary>
-        public List<Transaction> Transactions { get; set; } = null!;
+        public List<Transaction>? Transactions { get; set; }
 
         /// <summary>
         /// (RU) Навигационное свойство для связанной сущности "Обязательство". Отношение Many(Tag) To Many(Obligation).
         /// </summary>
-        public List<Obligation> Obligations { get; set;} = null!;
+        public List<Obligation>? Obligations { get; set;}
     }
 }

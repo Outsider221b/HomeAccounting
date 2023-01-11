@@ -15,7 +15,7 @@ namespace HA.Entities
 		/// </summary>
 		[Key]
 		[Required]
-		public int CurrencyId { get; set; }
+		public ulong CurrencyId { get; set; }
 
 		/// <summary>
 		/// (RU) Полное название валюты, например, "Рубль".
@@ -31,17 +31,11 @@ namespace HA.Entities
 		[MaxLength(5)]
 		public string? ShortTitle { get; set; }
 
-		/// <summary>
-		/// (RU) Комментарий (необязателен).
-		/// </summary>
-		[MaxLength(200)]
-		public string? Description { get; set; }
-
 		//Navigation
 
 		/// <summary>
 		/// (RU) Навигационное свойство для связанной сущности "Счёт". Связь One(Currency) To Many(Source).
 		/// </summary>
-		public List<Source> Sources { get; set; } = null!;
+		public List<Source>? Sources { get; set; } 
 	}
 }

@@ -47,6 +47,6 @@ namespace HA.Entities
         /// <summary>
         /// (RU) Навигационное свойство для связанной сущности "Обязательство". Отношение One(ObligationSubject) To Many(Obligation).
         /// </summary>
-        public List<Obligation> Obligations { get; set; } = null!;
+        public List<Obligation>? Obligations { get; set; }
 	}
 }
